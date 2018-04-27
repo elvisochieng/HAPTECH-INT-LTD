@@ -1,0 +1,52 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Haptech Int. Ltd.</title>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/blog-custom.css' %}">
+
+</head>
+<body>
+
+
+<div class="container">
+  <div class="row">
+    <h2>Haptech International Ltd</h2>
+
+    <p>YOUR TRUSTED LEADER IN ENTERPRISE ICT AND MANAGEMENT SOLUTIONS. </p>
+    <hr>
+
+    {% for post in posts %}
+    <section id="pinBoot">
+      
+      {% if post.slug %}
+      <article class="white-panel">
+        <h4><a href="#">{{ post.title }}</a></h4>
+        <p>{{ post.body }}</p>
+        <p>Posted on {{ post.date }}.</p>
+        <hr>
+      </article>
+      {% endif %}
+    </section>
+    {% endfor %}
+
+    <hr>
+
+
+  </div>
+  <p>
+    <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fbootsnipp.com%2Fiframe%2FZkk0O" target="_blank"><small>HTML</small><sup>5</sup></a>
+    <br>
+    <br>
+
+  </p>
+
+</div>
+
+  <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/js/blog-custom.js' %}"></script>
+	
+</body>
+</html>
